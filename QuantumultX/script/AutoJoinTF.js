@@ -115,12 +115,12 @@ const TF_Check = (app_id) => {
             const appData2 = $.toObj(data)
             $.log(response)
             $.log(appData2)
-            if (response.status !== 200) {
-                APP_IDS.splice(inArray(app_id), 1)
-                $.setdata(APP_IDS.join(','), 'tf_app_ids')
-                $.msg('不是有效的𝐓𝐞𝐬𝐭𝐅𝐥𝐢𝐠𝐡𝐭链接', '', `${app_id} 已被移除`)
-                return reject(`${app_id} 不是有效链接: 状态码 ${response.status}，移除 APP_ID`)
-            }
+            // if (response.status !== 200) {
+            //     APP_IDS.splice(inArray(app_id), 1)
+            //     $.setdata(APP_IDS.join(','), 'tf_app_ids')
+            //     $.msg('不是有效的𝐓𝐞𝐬𝐭𝐅𝐥𝐢𝐠𝐡𝐭链接', '', `${app_id} 已被移除`)
+            //     return reject(`${app_id} 不是有效链接: 状态码 ${response.status}，移除 APP_ID`)
+            // }
             const appData = $.toObj(data)
             $.log(`${appData}`)
             if (!appData) {
