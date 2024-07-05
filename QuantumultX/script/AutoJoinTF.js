@@ -111,16 +111,17 @@ const TF_Check = (app_id) => {
             if (error) {
                 return reject(`${app_id} 网络请求失败: ${error}`)
             }
-            $.log(`${response.status}`)
+            $.log(`状态码：${response.status}`)
+            $.log(`$.toObj(data)`)
+            $.log(`$.toObj(data)`)
             if (response.status !== 200) {
                 APP_IDS.splice(inArray(app_id), 1)
                 $.setdata(APP_IDS.join(','), 'tf_app_ids')
                 $.msg('不是有效的𝐓𝐞𝐬𝐭𝐅𝐥𝐢𝐠𝐡𝐭链接', '', `${app_id} 已被移除`)
-                $.log(`${app_id} 不是有效链接: 状态码 ${response.status}，移除 APP_ID`)
                 return reject(`${app_id} 不是有效链接: 状态码 ${response.status}，移除 APP_ID`)
             }
             const appData = $.toObj(data)
-            $.log(`${response.status}`)
+            $.log(`${appData}`)
             if (!appData) {
                 return reject(`${app_id} 数据解析失败: ${data}`)
             }
