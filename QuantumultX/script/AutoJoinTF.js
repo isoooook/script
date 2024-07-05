@@ -112,8 +112,9 @@ const TF_Check = (app_id) => {
                 return reject(`${app_id} 网络请求失败: ${error}`)
             }
             $.log(`状态码：${response.status}`)
-            $.log(`$.toObj(data)`)
-            $.log(`$.toObj(data)`)
+            const appData2 = $.toObj(data)
+            $.log(response)
+            $.log(appData2)
             if (response.status !== 200) {
                 APP_IDS.splice(inArray(app_id), 1)
                 $.setdata(APP_IDS.join(','), 'tf_app_ids')
