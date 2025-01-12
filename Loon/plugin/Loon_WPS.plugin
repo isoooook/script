@@ -1,10 +1,10 @@
 #!name=wps签到
 #!desc=WPS每日签到并兑换会员，需要进入此插件的主页链接，阅读使用说明操作
-#!author：插件作者
-#!homepage：插件的主页
-#!icon：https://s21.ax1x.com/2024/11/14/pAgrz6S.png
-#!loon_version：最低Loon版本: 3.2.4(787)
-#!tag：签到
+#!author=插件作者
+#!homepage=插件的主页
+#!icon=https://s21.ax1x.com/2024/11/14/pAgrz6S.png
+#!loon_version=最低Loon版本: 3.2.4(787)
+#!tag=签到
 
 [Argument]
 CaptureCookie=switch, false, true, tag=捕获Cookie, desc = 此开关控制插件是否捕获Cookie
