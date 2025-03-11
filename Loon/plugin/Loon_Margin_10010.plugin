@@ -1,4 +1,4 @@
-#!name=联通余量v4
+#!name=联通余量
 #!desc=
 #!author=ChinaUnicomDev
 #!homepage=https://github.com/ChinaTelecomOperators/ChinaUnicom
@@ -7,7 +7,7 @@
 #
 
 [Argument]
-#CaptureCookie=switch, false, true, tag=捕获Cookie, desc = 此开关控制插件是否捕获Cookie
+Capture=switch, false, true, tag=定时任务, desc = 定时任务开关
 inputCron=input, "6 19 * * *", tag=定时参数
 
 [Script]
@@ -15,7 +15,7 @@ inputCron=input, "6 19 * * *", tag=定时参数
 http-response ^https?:\/\/m\.client\.10010\.com\/mobileService\/onLine\.htm script-path=https://github.com/ChinaTelecomOperators/ChinaUnicom/releases/download/Prerelease-Alpha/10010_capture.js, requires-body=true, timeout=120, tag=10010v4-response
 
 # > Cron
-cron {inputCron} script-path=https://github.com/ChinaTelecomOperators/ChinaUnicom/releases/download/Prerelease-Alpha/10010.js, timeout=120, tag=10010v4-cron
+cron {inputCron} script-path=https://github.com/ChinaTelecomOperators/ChinaUnicom/releases/download/Prerelease-Alpha/10010.js, timeout=120, tag=联通余量v4, enable = {Capture}  
 
 # > Request
 http-request ^https?:\/\/10010v4\.com script-path=https://github.com/ChinaTelecomOperators/ChinaUnicom/releases/download/Prerelease-Alpha/10010.js, timeout=120, tag=10010v4-request
