@@ -1,0 +1,17 @@
+#!name=阿里云盘签到
+#!desc=阿里云盘定时签到
+#!author=插件作者
+#!homepage=插件的主页
+#!icon=https://raw.githubusercontent.com/deezertidal/private/main/icons/aliyun.png
+#!tag=签到
+
+[Argument]
+CaptureCookie=switch, false, true, tag=捕获Cookie, desc = 此开关控制插件是否捕获Cookie
+inputCron=input, "6 19 * * *", tag=定时参数
+
+[Script]
+http-response https:\/\/auth.aliyundrive.com\/v2\/account\/token script-path=https://raw.githubusercontent.com/lowking/Scripts/master/ali/aliYunPanCheckIn.js, requires-body=true, timeout=60, tag= 捕获Cookie, enable = {CaptureCookie} 
+cron  {inputCron} script-path=https://raw.githubusercontent.com/lowking/Scripts/master/ali/aliYunPanCheckIn.js, timeout=300, tag=阿里云盘签到
+
+[MITM]
+hostname = auth.aliyundrive.com
