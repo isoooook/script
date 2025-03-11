@@ -1,0 +1,22 @@
+#!name=获取COOKIE
+#!desc=获取联通、电信cookie
+#!author=3kkk
+#!homepage=https://github.com/isoooook/script
+#!icon=
+#!tag=cookie
+
+#!联通获取方式：打开  中国联通app【官方版】-> 首页的流量查询获取
+#!电信获取方式：打开  https://e.dlife.cn/index.do 登录
+
+[Argument]
+CaptureCookie10010=switch, false, true, tag=捕获联通Cookie, desc = 此开关控制插件是否捕获联通Cookie
+CaptureCookie10000=switch, false, true, tag=捕获电信Cookie, desc = 此开关控制插件是否捕获电信Cookie
+
+[Script]
+# 联通
+http-request https:\/\/m\.client\.10010\.com\/(.*)\/smartwisdomCommon script-path=https://raw.githubusercontent.com/dompling/Script/master/10010/index.js, tag= 联通, enable = {CaptureCookie10010} 
+# 电信
+http-request ^https:\/\/e\.dlife\.cn\/user\/loginMiddle  script-path=https://raw.githubusercontent.com/dompling/Script/master/10000/index.js, tag= 电信, enable = {CaptureCookie10000} 
+
+[MITM]
+hostname = m.client.10010.com, e.dlife.cn 
