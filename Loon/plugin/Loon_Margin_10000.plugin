@@ -1,0 +1,18 @@
+#!name=电信余量
+#!desc=
+#!author=ChinaUnicomDev
+#!homepage=https://github.com/ChinaTelecomOperators/ChinaUnicom
+#!openurl=
+#!icon=https://raw.githubusercontent.com/LikeGEM/TuBiao/main/Icons/zhongguodianxin.png
+#!tag=小组件
+
+[Argument]
+Capture=switch, false, true, tag=定时任务, desc = 定时任务开关
+inputCron=input, "6 19 * * *", tag=定时参数
+
+[Script]
+# > Cron
+cron {inputCron} script-path=https://github.com/ChinaTelecomOperators/ChinaTelecom/releases/download/Prerelease-Alpha/Tele_Cellular_Auto.js, tag=电信余量自动版, enable = {Capture}  
+
+#[MITM]
+#hostname = 
