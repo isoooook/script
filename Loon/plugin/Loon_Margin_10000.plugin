@@ -6,7 +6,7 @@
 #!tag=小组件
 
 [Argument]
-Capture=switch, false, true, tag=定时任务, desc = 定时任务开关
+Capture=switch, true, false, tag=定时任务, desc = 定时任务开关
 inputCron=input, "6 19 * * *", tag=定时参数
 
 [Script]
