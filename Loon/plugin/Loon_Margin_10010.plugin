@@ -1,0 +1,24 @@
+#!name=联通余量v4
+#!desc=
+#!author=ChinaUnicomDev
+#!homepage=https://github.com/ChinaTelecomOperators/ChinaUnicom
+#!openurl=https://boxjs.net/#/app/ChinaUnicom.10010v4
+#!icon=https://raw.githubusercontent.com/Orz-3/mini/master/Color/10010.png
+#
+
+[Argument]
+#CaptureCookie=switch, false, true, tag=捕获Cookie, desc = 此开关控制插件是否捕获Cookie
+inputCron=input, "6 19 * * *", tag=定时参数
+
+[Script]
+# > Response
+http-response ^https?:\/\/m\.client\.10010\.com\/mobileService\/onLine\.htm script-path=https://github.com/ChinaTelecomOperators/ChinaUnicom/releases/download/Prerelease-Alpha/10010_capture.js, requires-body=true, timeout=120, tag=10010v4-response
+
+# > Cron
+cron {inputCron} script-path=https://github.com/ChinaTelecomOperators/ChinaUnicom/releases/download/Prerelease-Alpha/10010.js, timeout=120, tag=10010v4-cron
+
+# > Request
+http-request ^https?:\/\/10010v4\.com script-path=https://github.com/ChinaTelecomOperators/ChinaUnicom/releases/download/Prerelease-Alpha/10010.js, timeout=120, tag=10010v4-request
+
+[MITM]
+hostname = 10010v4.com, m.client.10010.com
