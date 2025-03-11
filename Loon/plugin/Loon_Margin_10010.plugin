@@ -4,7 +4,7 @@
 #!homepage=https://github.com/ChinaTelecomOperators/ChinaUnicom
 #!openurl=https://boxjs.net/#/app/ChinaUnicom.10010v4
 #!icon=https://raw.githubusercontent.com/Orz-3/mini/master/Color/10010.png
-#
+#!tag=小组件
 
 [Argument]
 Capture=switch, false, true, tag=定时任务, desc = 定时任务开关
