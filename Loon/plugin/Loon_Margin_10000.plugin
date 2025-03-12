@@ -1,7 +1,8 @@
 #!name=电信余量
-#!desc=电信余量自动版
+#!desc=电信余量查询（自动版）
 #!author=ChinaUnicomDev
-#!homepage=https://github.com/ChinaTelecomOperators/ChinaUnicom
+#!openurl=https://boxjs.net/#/app/Tele_AutoCheck
+#!homepage=https://github.com/ChinaTelecomOperators/ChinaTelecom
 #!icon=https://raw.githubusercontent.com/LikeGEM/TuBiao/main/Icons/zhongguodianxin.png
 #!tag=小组件
 
