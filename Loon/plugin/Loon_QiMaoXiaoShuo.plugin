@@ -1,0 +1,13 @@
+#!name=七猫小说去广告
+#!desc=七猫小说伪装VIP去广告（版本7.25.20）
+#!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1090.png
+#!tag=小组件
+
+[Rewrite]
+^https:\/\/api-gw\.wtzw\.com\/welf\/app\/v1\/task\/red-packet$ - reject-dict
+
+[Script]
+http-response ^https?:\/\/(api-\w+|xiaoshuo)\.wtzw\.com\/api\/v\d\/ script-path=https://raw.githubusercontent.com/wf021325/qx/master/js/qimao.js, requires-body=true, timeout=60, tag=qimao
+
+[MITM]
+hostname = *.wtzw.com
