@@ -1,6 +1,7 @@
 #!name=七猫小说去广告
 #!desc=七猫小说伪装VIP去广告（版本7.25.20）
-#!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1090.png
+# https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1090.png
+#!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/SevenCat.png
 #!tag=小组件
 
 [Rewrite]
